@@ -1,7 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 
+import peopleAttendingReducer from './components/registration/PeopleAttendingForm/PeopleAttendingForm.slice'
+
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    PeopleAttending: peopleAttendingReducer,
+  },
 })
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

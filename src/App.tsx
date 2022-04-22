@@ -1,5 +1,6 @@
 import './App.css';
 import { Step } from './components/common/Step/Step';
+import { PeopleAttendingForm } from './components/registration/PeopleAttendingForm/PeopleAttendingForm';
 
 function App() {
   return (
@@ -9,9 +10,7 @@ function App() {
       </header>
       <div className="App-main">
         <Step title="Step 1" color="aquamarine">
-          <div>
-            -
-          </div>
+          <PeopleAttendingForm />
         </Step>
 
         <Step title="Step 2" color="lightblue">
