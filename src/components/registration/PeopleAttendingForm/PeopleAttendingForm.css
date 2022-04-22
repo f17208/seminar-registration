@@ -1,0 +1,22 @@
+.PeopleAttending-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+}
+
+.PeopleAttending-select {
+  margin-bottom: 24px;
+}
+
+.PeopleAttending-cta {
+  margin: 0 0 8px 0;
+}
+
+.PeopleAttending-item {
+  display: flex;
+}
+
+.PeopleAttending-item-name {
+  flex: 1;
+  flex-grow: 1;
+}

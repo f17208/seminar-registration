@@ -11,7 +11,10 @@ export type StepProps = {
 export const Step: FC<StepProps> = ({ title, children, disabled, color }) => {
 
   return (
-    <div className="Step-container" style={{ backgroundColor: color }}>
+    <div 
+      className={`Step-container ${disabled && 'Step-container--disabled'}`} 
+      style={{ backgroundColor: color }}
+    >
       <header className="Step-header">
         {title}
       </header>
