@@ -50,6 +50,9 @@ export const {
 // selectors
 export const numberOfPeopleSelector = (state: RootState) => state.PeopleAttending.peopleDetails.length;
 export const peopleDetailsSelector = (state: RootState) => state.PeopleAttending.peopleDetails;
-export const isCompleteSelector = (state: RootState) => state.PeopleAttending.peopleDetails.every(d => d.name);
+export const isCompleteSelector = (state: RootState) => (
+  state.PeopleAttending.peopleDetails.length > 0 
+    && state.PeopleAttending.peopleDetails.every(d => d.name)
+);
 
 export default peopleAttendingSlice.reducer

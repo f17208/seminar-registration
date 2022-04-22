@@ -17,10 +17,13 @@
 
 .Step-content {
   min-width: 160px;
-  mix-blend-mode: difference;
 }
 
 .Step-fieldset {
   padding-top: 0;
   border: 0;
+}
+
+.Step-container--disabled {
+  opacity: 0.5;
 }

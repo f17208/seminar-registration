@@ -5,6 +5,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.color--contrast {
+  mix-blend-mode: difference;
+}
+
 :root {
   --primary-color: #2196f3;
   --text-primary-color: black;
