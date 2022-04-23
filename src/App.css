@@ -7,12 +7,6 @@
 
 .App-container {
   padding: 24px 24px;
-  background-color: var(--bg-main-color);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  /* font-size: calc(10px + 2vmin); */
-  line-height: calc(10px + 1.5vmin);
 }
 
 .App-header {
@@ -24,7 +18,14 @@
 .App-main {
   padding-top: 16px;
   display: flex;
+  flex-wrap: wrap;
   column-gap: 10px;
+}
+
+@media screen and (max-width: 1225px) {
+  .App-main {
+    flex-direction: column;
+  }
 }
 
 .text-primary {
