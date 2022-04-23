@@ -3,10 +3,14 @@
   --text-primary-color: black;
   --bg-main-color: #282c34;
   --bg-paper-color: #f7faff;
+  --spacing-1: 8px;
+  --spacing-2: calc(var(--spacing-1) * 2);
+  --spacing-3: calc(var(--spacing-1) * 3);
+  --color-success: green;
 }
 
 .App-container {
-  padding: 24px 24px;
+  padding: var(--spacing-3) var(--spacing-3);
 }
 
 .App-header {
@@ -16,10 +20,10 @@
 }
 
 .App-main {
-  padding-top: 16px;
+  padding-top: var(--spacing-2);
   display: flex;
   flex-wrap: wrap;
-  column-gap: 10px;
+  column-gap: var(--spacing-2);
 }
 
 @media screen and (max-width: 1225px) {

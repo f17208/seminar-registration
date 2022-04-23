@@ -3,9 +3,5 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-#root {
-  height: 100vh;
   background-color: var(--bg-main-color);
 }

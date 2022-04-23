@@ -1,0 +1,5 @@
+.CompleteRegistration-questions {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--spacing-1);
+}

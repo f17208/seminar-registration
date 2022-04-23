@@ -12,8 +12,8 @@ import {
 import { RegistrationOptionsForm } from './components/registration/RegistrationOptions/RegistrationOptionsForm';
 
 function App() {
-  const peopleAttendingIsComplete = useSelector(peopleAttendingIsCompleteSelector);
-  const registrationOptionsIsComplete = useSelector(registrationOptionsIsCompleteSelector);
+  const isPeopleAttendingComplete = useSelector(peopleAttendingIsCompleteSelector);
+  const isRegistrationOptionsComplete = useSelector(registrationOptionsIsCompleteSelector);
 
   return (
     <div className="App-container">
@@ -25,11 +25,11 @@ function App() {
           <PeopleAttendingForm />
         </Step>
 
-        <Step title="Step 2" color="lightblue" disabled={!peopleAttendingIsComplete}>
+        <Step title="Step 2" color="lightblue" disabled={!isPeopleAttendingComplete}>
           <RegistrationOptionsForm />
         </Step>
 
-        <Step title="Step 3" color="bisque" disabled={!registrationOptionsIsComplete}>
+        <Step title="Step 3" color="bisque" disabled={!isRegistrationOptionsComplete}>
           <CompleteRegistrationForm />
         </Step>
       </div>
