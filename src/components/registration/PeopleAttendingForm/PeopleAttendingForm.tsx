@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { CompleteCheckContainer } from '../../common/CompleteCheck/CompleteCheck';
 
 import './PeopleAttendingForm.css';
-import { 
-  numberOfPeopleSelector, 
-  setNumberOfPeople, 
+import {
+  numberOfPeopleSelector,
+  setNumberOfPeople,
   peopleDetailsSelector,
   setNthPersonDetail,
   isCompleteSelector,
@@ -25,7 +25,7 @@ export const PeopleAttendingForm: FC<PeopleAttendingFormProps> = () => {
 
       <div>
         How many people will be attending?&nbsp;
-        <select 
+        <select
           className="PeopleAttending-select"
           id="numberOfPeopleSelect"
           value={numberOfPeople}
@@ -35,10 +35,10 @@ export const PeopleAttendingForm: FC<PeopleAttendingFormProps> = () => {
             new Array(6)
               .fill(0)
               .map((_, i) => {
-                if (i === 0) {
-                  return <option key={i} value={i}>Please Choose</option>
-                }
-                return <option key={i} value={i}>{i}</option>
+                // eslint-disable-next-line react/no-array-index-key
+                return <option key={i} value={i}>
+                  {i === 0 ? 'Please Choose' : i}
+                </option>;
               })
           }
         </select>
@@ -57,26 +57,28 @@ export const PeopleAttendingForm: FC<PeopleAttendingFormProps> = () => {
                 .map((_, i) => {
                   const details = peopleDetails[i];
                   if (!details) {
+                    // eslint-disable-next-line no-console
                     console.warn('missing data', i);
                     return null;
                   }
+                  // eslint-disable-next-line react/no-array-index-key
                   return <span key={i} className="PeopleAttending-item text-small">
                     Attendee {i + 1} Name:&nbsp;
-                    <input 
+                    <input
                       className="PeopleAttending-item-name"
                       value={details.name}
                       onChange={e => (
                         dispatch(
-                          setNthPersonDetail({ 
-                            index: i, 
-                            data: { 
+                          setNthPersonDetail({
+                            index: i,
+                            data: {
                               name: e.target.value,
-                            }
-                          })
+                            },
+                          }),
                         )
                       )}
                     />
-                  </span>
+                  </span>;
                 })
             }
           </div>
@@ -90,4 +92,4 @@ export const PeopleAttendingForm: FC<PeopleAttendingFormProps> = () => {
       }
     </div>
   );
-}
+};

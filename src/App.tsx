@@ -3,7 +3,7 @@ import './App.css';
 import { Step } from './components/common/Step/Step';
 import { CompleteRegistrationForm } from './components/registration/CompleteRegistration/CompleteRegistrationForm';
 import { PeopleAttendingForm } from './components/registration/PeopleAttendingForm/PeopleAttendingForm';
-import { 
+import {
   isCompleteSelector as peopleAttendingIsCompleteSelector,
 } from './components/registration/PeopleAttendingForm/PeopleAttendingForm.slice';
 import {
