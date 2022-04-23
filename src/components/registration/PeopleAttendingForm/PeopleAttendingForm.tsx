@@ -35,10 +35,10 @@ export const PeopleAttendingForm: FC<PeopleAttendingFormProps> = () => {
             new Array(6)
               .fill(0)
               .map((_, i) => {
-                if (i === 0) {
-                  return <option key={i} value={i}>Please Choose</option>
-                }
-                return <option key={i} value={i}>{i}</option>
+                // eslint-disable-next-line react/no-array-index-key
+                return <option key={i} value={i}>
+                  {i === 0 ? 'Please Choose' : i}
+                </option>
               })
           }
         </select>
@@ -57,9 +57,11 @@ export const PeopleAttendingForm: FC<PeopleAttendingFormProps> = () => {
                 .map((_, i) => {
                   const details = peopleDetails[i];
                   if (!details) {
+                    // eslint-disable-next-line no-console
                     console.warn('missing data', i);
                     return null;
                   }
+                  // eslint-disable-next-line react/no-array-index-key
                   return <span key={i} className="PeopleAttending-item text-small">
                     Attendee {i + 1} Name:&nbsp;
                     <input 

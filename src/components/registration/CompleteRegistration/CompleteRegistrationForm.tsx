@@ -27,14 +27,13 @@ export const CompleteRegistrationForm: FC<CompleteRegistrationFormProps> = () =>
           <input 
             type="checkbox" 
             checked={isConfirmed}
-            onChange={e => {
-              setIsConfirmed(isConfirmed => !isConfirmed)
-            }}
+            onChange={() => setIsConfirmed(_isConfirmed => !_isConfirmed)}
           />
         </div>
 
         <div className="CompleteRegistration-submit">
           <button
+            type="button"
             disabled={!isConfirmed}
             onClick={onSubmit}
           >

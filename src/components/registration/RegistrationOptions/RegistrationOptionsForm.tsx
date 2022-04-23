@@ -37,7 +37,7 @@ export const RegistrationOptionsForm: FC<RegistrationOptionsFormProps> = () => {
               name="company-name-required" 
               value="1" 
               checked={!!isCompanyNameRequiredOnBadges}
-              onChange={e => dispatch(setIsCompanyNameRequiredOnBadges(true))}
+              onChange={() => dispatch(setIsCompanyNameRequiredOnBadges(true))}
             />
             <label htmlFor="company-name-required-yes">Yes</label>
 
@@ -47,7 +47,7 @@ export const RegistrationOptionsForm: FC<RegistrationOptionsFormProps> = () => {
               name="company-name-required" 
               value="0"
               checked={isCompanyNameRequiredOnBadges === null ? undefined : !isCompanyNameRequiredOnBadges}
-              onChange={e => dispatch(setIsCompanyNameRequiredOnBadges(false))}
+              onChange={() => dispatch(setIsCompanyNameRequiredOnBadges(false))}
             />
             <label htmlFor="company-name-required-no">No</label>
           </div>
@@ -75,7 +75,7 @@ export const RegistrationOptionsForm: FC<RegistrationOptionsFormProps> = () => {
               name="special-accomodation-required" 
               value="1" 
               checked={!!isSpecialAccomodationRequired}
-              onChange={e => dispatch(setIsSpecialAccomodationRequired(true))}
+              onChange={() => dispatch(setIsSpecialAccomodationRequired(true))}
             />
             <label htmlFor="special-accomodation-required-yes">Yes</label>
 
@@ -85,7 +85,7 @@ export const RegistrationOptionsForm: FC<RegistrationOptionsFormProps> = () => {
               name="special-accomodation-required" 
               value="0" 
               checked={isSpecialAccomodationRequired === null ? undefined : !isSpecialAccomodationRequired}
-              onChange={e => dispatch(setIsSpecialAccomodationRequired(false))}
+              onChange={() => dispatch(setIsSpecialAccomodationRequired(false))}
             />
             <label htmlFor="special-accomodation-required-no">No</label>
           </div>
