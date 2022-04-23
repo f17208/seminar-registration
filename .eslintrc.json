@@ -49,5 +49,8 @@
         "no-param-reassign": "off"
       }
     }
-  ]
+  ],
+  "globals": {
+    "JSX": true
+  }
 }

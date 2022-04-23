@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../../app.store';
 
 export interface RegistrationOptionsState {
@@ -11,7 +11,7 @@ const initialState: RegistrationOptionsState = {
   isCompanyNameRequiredOnBadges: null,
   isSpecialAccomodationRequired: null,
   companyName: '',
-}
+};
 
 export const registrationOptionsSlice = createSlice({
   name: 'RegistrationOptions',
@@ -34,15 +34,15 @@ export const registrationOptionsSlice = createSlice({
       Object.assign(state, initialState);
     },
   },
-})
+});
 
 // Action creators are generated for each case reducer function
-export const { 
+export const {
   setIsCompanyNameRequiredOnBadges,
   setIsSpecialAccomodationRequired,
   setCompanyName,
   reset,
-} = registrationOptionsSlice.actions
+} = registrationOptionsSlice.actions;
 
 // selectors
 export const isCompanyNameRequiredOnBadgesSelector = (state: RootState) => (
@@ -59,7 +59,7 @@ export const isCompleteSelector = (state: RootState) => {
   const slice = state.RegistrationOptions;
   return slice.isCompanyNameRequiredOnBadges !== null
     && (!slice.isCompanyNameRequiredOnBadges || slice.companyName)
-    && slice.isSpecialAccomodationRequired !== null
+    && slice.isSpecialAccomodationRequired !== null;
 };
 
-export default registrationOptionsSlice.reducer
+export default registrationOptionsSlice.reducer;
