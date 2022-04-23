@@ -23,11 +23,12 @@ export const PeopleAttendingForm: FC<PeopleAttendingFormProps> = () => {
   return (
     <div className="PeopleAttending-container">
 
-      <div className="color--contrast">
+      <div>
         How many people will be attending?&nbsp;
         <select 
           className="PeopleAttending-select"
           id="numberOfPeopleSelect"
+          value={numberOfPeople}
           onChange={e => dispatch(setNumberOfPeople(+e.target.value))}
         >
           {
@@ -48,37 +49,38 @@ export const PeopleAttendingForm: FC<PeopleAttendingFormProps> = () => {
           )
         }
 
-        <div className="PeopleAttending-list">
-          {
-            new Array(numberOfPeople)
-              .fill(0)
-              .map((_, i) => {
-                const details = peopleDetails[i];
-                if (!details) {
-                  console.warn('missing data', i);
-                  return null;
-                }
-                return <span className="PeopleAttending-item">
-                  Attendee {i + 1} name:&nbsp;
-                  <input 
-                    className="PeopleAttending-item-name"
-                    key={i}
-                    value={details.name}
-                    onChange={e => (
-                      dispatch(
-                        setNthPersonDetail({ 
-                          index: i, 
-                          data: { 
-                            name: e.target.value,
-                          }
-                        })
-                      )
-                    )}
-                  />
-                </span>
-              })
-          }
-        </div>
+        { numberOfPeople > 0 && (
+          <div className="PeopleAttending-list">
+            {
+              new Array(numberOfPeople)
+                .fill(0)
+                .map((_, i) => {
+                  const details = peopleDetails[i];
+                  if (!details) {
+                    console.warn('missing data', i);
+                    return null;
+                  }
+                  return <span key={i} className="PeopleAttending-item text-small">
+                    Attendee {i + 1} Name:&nbsp;
+                    <input 
+                      className="PeopleAttending-item-name"
+                      value={details.name}
+                      onChange={e => (
+                        dispatch(
+                          setNthPersonDetail({ 
+                            index: i, 
+                            data: { 
+                              name: e.target.value,
+                            }
+                          })
+                        )
+                      )}
+                    />
+                  </span>
+                })
+            }
+          </div>
+        )}
       </div>
 
       {

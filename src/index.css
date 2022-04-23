@@ -3,15 +3,5 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.color--contrast {
-  mix-blend-mode: difference;
-}
-
-:root {
-  --primary-color: #2196f3;
-  --text-primary-color: black;
-  --bg-main-color: #282c34;
-  --bg-paper-color: #f7faff;
+  background-color: var(--bg-main-color);
 }

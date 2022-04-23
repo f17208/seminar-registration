@@ -1,0 +1,11 @@
+.RegistrationOptions-questions {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--spacing-2);
+}
+
+.RegistrationOptions-question {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(var(--spacing-1) / 2);
+}

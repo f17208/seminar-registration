@@ -1,26 +1,26 @@
 .Step-container {
-  margin-top: 16px;
+  margin-top: var(--spacing-2);
+  margin-bottom: var(--spacing-2);
+  height: fit-content;
+  padding-bottom: var(--spacing-1);
+  max-width: fit-content;
 }
 
 .Step-header {
   width: fit-content;
   position: relative;
-  left: 16px;
+  left: var(--spacing-2);
   bottom: 0.8em;
   padding: 2px 10px 4px 10px;
   background: var(--bg-paper-color);
-  border-radius: 8px;
+  border-radius: var(--spacing-1);
   color: var(--text-primary-color);
   font-weight: bold;
-  font-size: 0.8em;
-}
-
-.Step-content {
-  min-width: 160px;
 }
 
 .Step-fieldset {
   padding-top: 0;
+  padding-bottom: 0;
   border: 0;
 }
 

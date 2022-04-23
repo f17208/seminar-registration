@@ -36,7 +36,7 @@ export const peopleAttendingSlice = createSlice({
       state.peopleDetails[action.payload.index] = action.payload.data;
     },
     reset: (state) => {
-      state = initialState;
+      Object.assign(state, initialState);
     },
   },
 })
@@ -45,6 +45,7 @@ export const peopleAttendingSlice = createSlice({
 export const { 
   setNumberOfPeople,
   setNthPersonDetail,
+  reset,
 } = peopleAttendingSlice.actions
 
 // selectors
