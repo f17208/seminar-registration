@@ -48,6 +48,14 @@
       "rules": {
         "no-param-reassign": "off"
       }
+    },
+    {
+      "files": [
+        "src/**/*.test.{ts,tsx}"
+      ],
+      "rules": {
+        "no-undef": "off"
+      }
     }
   ],
   "globals": {

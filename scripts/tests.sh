@@ -1,1 +1,2 @@
-echo "hello";
+echo "starting tests...";
+npm run test
