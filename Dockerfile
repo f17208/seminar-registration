@@ -20,4 +20,4 @@ COPY . ./
 EXPOSE 9090
 
 # start app
-CMD ["npm", "start"]
+CMD ["sh", "scripts/run.sh"]
