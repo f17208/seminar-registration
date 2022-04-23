@@ -1,3 +1,9 @@
+:root {
+  --primary-color: #2196f3;
+  --text-primary-color: black;
+  --bg-main-color: #282c34;
+  --bg-paper-color: #f7faff;
+}
 
 .App-container {
   padding: 24px 24px;
@@ -6,10 +12,11 @@
   display: flex;
   flex-direction: column;
   /* font-size: calc(10px + 2vmin); */
-  color: white;
+  line-height: calc(10px + 1.5vmin);
 }
 
 .App-header {
+  color: var(--bg-paper-color);
   font-weight: bolder;
   font-size: 1.5em;
 }
@@ -22,4 +29,8 @@
 
 .text-primary {
   color: var(--primary-color);
+}
+
+.text-small {
+  font-size: 0.8em;
 }

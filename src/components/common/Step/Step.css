@@ -1,5 +1,7 @@
 .Step-container {
   margin-top: 16px;
+  height: fit-content;
+  padding-bottom: 8px;
 }
 
 .Step-header {

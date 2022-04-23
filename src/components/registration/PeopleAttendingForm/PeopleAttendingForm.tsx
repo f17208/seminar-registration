@@ -23,11 +23,12 @@ export const PeopleAttendingForm: FC<PeopleAttendingFormProps> = () => {
   return (
     <div className="PeopleAttending-container">
 
-      <div className="color--contrast">
+      <div>
         How many people will be attending?&nbsp;
         <select 
           className="PeopleAttending-select"
           id="numberOfPeopleSelect"
+          value={numberOfPeople}
           onChange={e => dispatch(setNumberOfPeople(+e.target.value))}
         >
           {
@@ -58,11 +59,10 @@ export const PeopleAttendingForm: FC<PeopleAttendingFormProps> = () => {
                   console.warn('missing data', i);
                   return null;
                 }
-                return <span className="PeopleAttending-item">
-                  Attendee {i + 1} name:&nbsp;
+                return <span key={i} className="PeopleAttending-item text-small">
+                  Attendee {i + 1} Name:&nbsp;
                   <input 
                     className="PeopleAttending-item-name"
-                    key={i}
                     value={details.name}
                     onChange={e => (
                       dispatch(
