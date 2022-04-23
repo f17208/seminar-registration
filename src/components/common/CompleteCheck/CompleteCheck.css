@@ -1,11 +1,11 @@
 .CompleteCheck-container {
-  padding-top: 32px;
+  padding-top: 28px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .CompleteCheck-icon {
-  font-size: 64px;
+  font-size: 72px;
   fill: green;
 }

@@ -49,36 +49,38 @@ export const PeopleAttendingForm: FC<PeopleAttendingFormProps> = () => {
           )
         }
 
-        <div className="PeopleAttending-list">
-          {
-            new Array(numberOfPeople)
-              .fill(0)
-              .map((_, i) => {
-                const details = peopleDetails[i];
-                if (!details) {
-                  console.warn('missing data', i);
-                  return null;
-                }
-                return <span key={i} className="PeopleAttending-item text-small">
-                  Attendee {i + 1} Name:&nbsp;
-                  <input 
-                    className="PeopleAttending-item-name"
-                    value={details.name}
-                    onChange={e => (
-                      dispatch(
-                        setNthPersonDetail({ 
-                          index: i, 
-                          data: { 
-                            name: e.target.value,
-                          }
-                        })
-                      )
-                    )}
-                  />
-                </span>
-              })
-          }
-        </div>
+        { numberOfPeople > 0 && (
+          <div className="PeopleAttending-list">
+            {
+              new Array(numberOfPeople)
+                .fill(0)
+                .map((_, i) => {
+                  const details = peopleDetails[i];
+                  if (!details) {
+                    console.warn('missing data', i);
+                    return null;
+                  }
+                  return <span key={i} className="PeopleAttending-item text-small">
+                    Attendee {i + 1} Name:&nbsp;
+                    <input 
+                      className="PeopleAttending-item-name"
+                      value={details.name}
+                      onChange={e => (
+                        dispatch(
+                          setNthPersonDetail({ 
+                            index: i, 
+                            data: { 
+                              name: e.target.value,
+                            }
+                          })
+                        )
+                      )}
+                    />
+                  </span>
+                })
+            }
+          </div>
+        )}
       </div>
 
       {
