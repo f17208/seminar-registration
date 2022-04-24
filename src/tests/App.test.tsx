@@ -1,9 +1,9 @@
 import { Provider } from 'react-redux';
 import { render, screen } from '@testing-library/react';
-import App from './App';
-import { store } from './app.store';
+import App from '../App';
+import { store } from '../app.store';
 
-test('renders first step', () => {
+test('successfully renders app', () => {
   render(
     <Provider store={store}>
       <App />

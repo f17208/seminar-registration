@@ -59,10 +59,9 @@ export const RegistrationOptionsForm: FC<RegistrationOptionsFormProps> = () => {
 
         {
           isCompanyNameRequiredOnBadges && (
-            <div className="RegistrationOptions-question text-small">
+            <div className="RegistrationOptions-company-name text-small">
               Company name:&nbsp;
               <input
-                className="RegistrationOptions-company-name"
                 value={companyName}
                 onChange={e => dispatch(setCompanyName(e.target.value))}
               />

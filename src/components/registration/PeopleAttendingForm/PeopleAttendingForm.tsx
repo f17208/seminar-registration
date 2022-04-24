@@ -22,9 +22,9 @@ export const PeopleAttendingForm: FC<PeopleAttendingFormProps> = () => {
 
   return (
     <div className="PeopleAttending-container">
-
       <div className="PeopleAttending-question">
-        How many people will be attending?&nbsp;
+        <label id="people-attending-label">How many people will be attending?</label>
+        &nbsp;
         <select
           className="PeopleAttending-select"
           id="numberOfPeopleSelect"
@@ -43,7 +43,7 @@ export const PeopleAttendingForm: FC<PeopleAttendingFormProps> = () => {
           }
         </select>
       </div>
-          
+
       <div>
         {
           numberOfPeople > 0 && (
@@ -72,6 +72,7 @@ export const PeopleAttendingForm: FC<PeopleAttendingFormProps> = () => {
                         </td>
                         <td>
                           <input
+                            id={`people-attending-input-${i}`}
                             value={details.name}
                             onChange={e => (
                               dispatch(

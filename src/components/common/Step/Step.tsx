@@ -14,9 +14,9 @@ export const Step: FC<StepProps> = ({ title, children, disabled, color }) => {
       className={`Step-container ${disabled ? 'Step-container--disabled' : ''}`}
       style={{ backgroundColor: color }}
     >
-      <header className="Step-header">
+      <span className="Step-header">
         {title}
-      </header>
+      </span>
       <div className="Step-content">
         <fieldset className="Step-fieldset" disabled={disabled}>
           {children}

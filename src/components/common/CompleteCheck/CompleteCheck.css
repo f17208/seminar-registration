@@ -6,6 +6,6 @@
 }
 
 .CompleteCheck-icon {
-  font-size: 72px;
-  fill: var(--color-success);
+  width: 100px;
+  height: auto;
 }
