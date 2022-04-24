@@ -3,10 +3,17 @@
   margin-bottom: var(--spacing-2);
   height: fit-content;
   padding-bottom: var(--spacing-1);
-  max-width: fit-content;
+  max-width: 33%;
+}
+
+@media screen and (max-width: 1225px) {
+  .Step-container {
+    max-width: fit-content;
+  }
 }
 
 .Step-header {
+  letter-spacing: -1px;
   width: fit-content;
   position: relative;
   left: var(--spacing-2);
@@ -15,11 +22,15 @@
   background: var(--bg-paper-color);
   border-radius: var(--spacing-1);
   color: var(--text-primary-color);
-  font-weight: bold;
+  font-size: 1.5em;
+  font-weight: bolder;
+  font-family: var(--font-family--header);
 }
 
 .Step-content {
   font-style: italic;
+  margin-bottom: var(--spacing-1);
+  font-size: 1.3em;
 }
 
 .Step-fieldset {

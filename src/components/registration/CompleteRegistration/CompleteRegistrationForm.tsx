@@ -30,16 +30,16 @@ export const CompleteRegistrationForm: FC<CompleteRegistrationFormProps> = () =>
             onChange={() => setIsConfirmed(_isConfirmed => !_isConfirmed)}
           />
         </div>
+      </div>
 
-        <div className="CompleteRegistration-submit">
-          <button
-            type="button"
-            disabled={!isConfirmed}
-            onClick={onSubmit}
-          >
-            Complete Registration
-          </button>
-        </div>
+      <div className="CompleteRegistration-submit">
+        <button
+          type="button"
+          disabled={!isConfirmed}
+          onClick={onSubmit}
+        >
+          Complete Registration
+        </button>
       </div>
     </div>
   );

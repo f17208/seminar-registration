@@ -1,7 +1,15 @@
+.PeopleAttending-question {
+  line-height: 1.5;
+}
+
 .PeopleAttending-list {
   display: flex;
   flex-direction: column;
   row-gap: calc(var(--spacing-1) / 2);
+}
+
+.PeopleAttending-list table {
+  width: fit-content;
 }
 
 .PeopleAttending-select {
@@ -12,11 +20,4 @@
   margin: 0 0 var(--spacing-1) 0;
 }
 
-.PeopleAttending-item {
-  display: flex;
-}
 
-.PeopleAttending-item-name {
-  flex: 1;
-  flex-grow: 1;
-}

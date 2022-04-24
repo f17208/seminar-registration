@@ -23,7 +23,7 @@ export const PeopleAttendingForm: FC<PeopleAttendingFormProps> = () => {
   return (
     <div className="PeopleAttending-container">
 
-      <div>
+      <div className="PeopleAttending-question">
         How many people will be attending?&nbsp;
         <select
           className="PeopleAttending-select"
@@ -42,7 +42,9 @@ export const PeopleAttendingForm: FC<PeopleAttendingFormProps> = () => {
               })
           }
         </select>
-
+      </div>
+          
+      <div>
         {
           numberOfPeople > 0 && (
             <h4 className="PeopleAttending-cta">Please provide full names:</h4>
@@ -51,36 +53,43 @@ export const PeopleAttendingForm: FC<PeopleAttendingFormProps> = () => {
 
         { numberOfPeople > 0 && (
           <div className="PeopleAttending-list">
-            {
-              new Array(numberOfPeople)
-                .fill(0)
-                .map((_, i) => {
-                  const details = peopleDetails[i];
-                  if (!details) {
-                    // eslint-disable-next-line no-console
-                    console.warn('missing data', i);
-                    return null;
-                  }
-                  // eslint-disable-next-line react/no-array-index-key
-                  return <span key={i} className="PeopleAttending-item text-small">
-                    Attendee {i + 1} Name:&nbsp;
-                    <input
-                      className="PeopleAttending-item-name"
-                      value={details.name}
-                      onChange={e => (
-                        dispatch(
-                          setNthPersonDetail({
-                            index: i,
-                            data: {
-                              name: e.target.value,
-                            },
-                          }),
-                        )
-                      )}
-                    />
-                  </span>;
-                })
-            }
+            <table>
+              <tbody>
+                {
+                  new Array(numberOfPeople)
+                    .fill(0)
+                    .map((_, i) => {
+                      const details = peopleDetails[i];
+                      if (!details) {
+                        // eslint-disable-next-line no-console
+                        console.warn('missing data', i);
+                        return null;
+                      }
+                      // eslint-disable-next-line react/no-array-index-key
+                      return <tr key={i} className="text-small">
+                        <td>
+                          Attendee {i + 1} Name:
+                        </td>
+                        <td>
+                          <input
+                            value={details.name}
+                            onChange={e => (
+                              dispatch(
+                                setNthPersonDetail({
+                                  index: i,
+                                  data: {
+                                    name: e.target.value,
+                                  },
+                                }),
+                              )
+                            )}
+                          />
+                        </td>
+                      </tr>;
+                    })
+                }
+              </tbody>
+            </table>
           </div>
         )}
       </div>
