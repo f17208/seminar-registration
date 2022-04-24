@@ -173,6 +173,57 @@ describe('App.js', () => {
     expect(disabledSteps.length).toBe(0);
   })
 
+  it('disables step 3 if a name is added in step 1', async () => {
+    await page.goto(`http://localhost:${process.env.PORT}`);
+
+    let completedSteps, disabledSteps;
+
+    completedSteps = await page.$$(completeChecksSelector);
+    disabledSteps = await page.$$(disabledStepsSelector);
+    expect(completedSteps.length).toBe(0);
+    expect(disabledSteps.length).toBe(2);
+
+    // COMPLETE STEP 1
+    await page.select('#numberOfPeopleSelect', '1');
+    await page.waitForSelector('#people-attending-input-0');
+
+    await page.focus('#people-attending-input-0');
+    await page.keyboard.type('Pietro Gambadilegno');
+
+    completedSteps = await page.$$(completeChecksSelector);
+    disabledSteps = await page.$$(disabledStepsSelector);
+    expect(completedSteps.length).toBe(1);
+    expect(disabledSteps.length).toBe(1);
+
+    // COMPLETE STEP 2
+    await page.click('#company-name-required-no');
+    await page.click('#special-accomodation-required-yes');
+
+    completedSteps = await page.$$(completeChecksSelector);
+    disabledSteps = await page.$$(disabledStepsSelector);
+    expect(completedSteps.length).toBe(2);
+    expect(disabledSteps.length).toBe(0);
+
+    // adds empty name in step 1
+    await page.select('#numberOfPeopleSelect', '2');
+
+    completedSteps = await page.$$(completeChecksSelector);
+    disabledSteps = await page.$$(disabledStepsSelector);
+    // step 2 is completed even if it's disabled, because its data was filled correctly
+    expect(completedSteps.length).toBe(1); 
+    expect(disabledSteps.length).toBe(2);
+
+    // complete step 1
+    await page.focus('#people-attending-input-1');
+    await page.keyboard.type('Pietro Gambadilegno');
+
+    // now step 2 and 3 should be enabled again
+    completedSteps = await page.$$(completeChecksSelector);
+    disabledSteps = await page.$$(disabledStepsSelector);
+    expect(completedSteps.length).toBe(2);
+    expect(disabledSteps.length).toBe(0);
+  })
+
 
   it('resets the state and brings back to step 1 after completing step 3', async () => {
     await page.goto(`http://localhost:${process.env.PORT}`);

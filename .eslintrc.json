@@ -38,7 +38,8 @@
     "react/jsx-wrap-multilines": "off",
     "jsx-a11y/label-has-associated-control": "off",
     "react/jsx-closing-tag-location": "off",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": "off"
   },
   "overrides": [
     {
