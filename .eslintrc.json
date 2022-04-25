@@ -44,7 +44,8 @@
       "jsx-a11y/label-has-associated-control": "off",
       "react/jsx-closing-tag-location": "off",
       "react/require-default-props": "off",
-      "react/jsx-props-no-spreading": "off"
+      "react/jsx-props-no-spreading": "off",
+      "import/prefer-default-export": "off"
     },
     "overrides": [
       {
