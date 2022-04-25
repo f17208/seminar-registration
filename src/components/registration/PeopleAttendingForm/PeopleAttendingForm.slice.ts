@@ -33,7 +33,11 @@ export const peopleAttendingSlice = createSlice({
       }
     },
     setNthPersonDetail: (state, action: PayloadAction<SetNthPersonDetailInput>) => {
-      state.peopleDetails[action.payload.index] = action.payload.data;
+      // used for sanitizing incoming data
+      const dataToSet = action.payload.data;
+      // we don't want spaces as name
+      dataToSet.name = dataToSet.name.trimStart();
+      state.peopleDetails[action.payload.index] = dataToSet;
     },
     reset: (state) => {
       Object.assign(state, initialState);

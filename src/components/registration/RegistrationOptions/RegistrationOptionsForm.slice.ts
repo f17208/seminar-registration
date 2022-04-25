@@ -25,7 +25,7 @@ export const registrationOptionsSlice = createSlice({
       }
     },
     setCompanyName: (state, action: PayloadAction<string>) => {
-      state.companyName = action.payload;
+      state.companyName = action.payload.trimStart();
     },
     setIsSpecialAccomodationRequired: (state, action: PayloadAction<boolean>) => {
       state.isSpecialAccomodationRequired = action.payload;
