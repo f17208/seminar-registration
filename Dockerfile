@@ -1,5 +1,5 @@
 # pull official base image
-FROM node:13.12.0-alpine
+FROM node:latest
 
 # set working directory
 WORKDIR /mnt
@@ -9,11 +9,14 @@ ENV PATH /mnt/node_modules/.bin:$PATH
 
 # install app dependencies
 COPY package.json ./
-COPY package-lock.json ./
+COPY yarn.lock ./
+
+# install yarn 
+RUN apt-get update && apt-get install -y yarn
 
 # with --production devDependencies won't be installed
-RUN npm install --production
-RUN npm install react-scripts -g
+RUN yarn install --production
+RUN yarn global add react-scripts
 
 # add app
 COPY . ./
