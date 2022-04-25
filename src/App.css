@@ -6,7 +6,7 @@
   --spacing-1: 8px;
   --spacing-2: calc(var(--spacing-1) * 2);
   --spacing-3: calc(var(--spacing-1) * 3);
-  --color-success: green;
+  --font-family--header: 'Arial Bold', sans-serif;
 }
 
 .App-container {
@@ -15,8 +15,21 @@
 
 .App-header {
   color: var(--bg-paper-color);
+  font-family: var(--font-family--header);
   font-weight: bolder;
   font-size: 3.5em;
+}
+
+h4 {
+  font-family: var(--font-family--header);
+  font-style: normal;
+  letter-spacing: -1px;
+}
+
+@media screen and (max-width: 680px) {
+  .App-header {
+    font-size: 2.5em;
+  }
 }
 
 .App-main {

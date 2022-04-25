@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { FaRegCheckCircle } from 'react-icons/fa';
+import { ReactComponent as CheckIcon } from '../../../assets/check-icon.svg';
 
 import './CompleteCheck.css';
 
 export const CompleteCheck: FC = () => {
-  return <FaRegCheckCircle className="CompleteCheck-icon" />;
+  return <CheckIcon className="CompleteCheck-icon" />;
 };
 
 export const CompleteCheckContainer: FC = () => {

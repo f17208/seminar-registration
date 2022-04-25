@@ -23,23 +23,25 @@ export const CompleteRegistrationForm: FC<CompleteRegistrationFormProps> = () =>
 
       <div className="CompleteRegistration-questions">
         <div className="CompleteRegistration-question">
-          Are you ready to rock?
+          Are you ready to rock?&nbsp;
           <input
+            id="complete-registration-confirm"
             type="checkbox"
             checked={isConfirmed}
             onChange={() => setIsConfirmed(_isConfirmed => !_isConfirmed)}
           />
         </div>
+      </div>
 
-        <div className="CompleteRegistration-submit">
-          <button
-            type="button"
-            disabled={!isConfirmed}
-            onClick={onSubmit}
-          >
-            Complete Registration
-          </button>
-        </div>
+      <div className="CompleteRegistration-submit">
+        <button
+          id="complete-registration-submit"
+          type="button"
+          disabled={!isConfirmed}
+          onClick={onSubmit}
+        >
+          Complete Registration
+        </button>
       </div>
     </div>
   );

@@ -58,7 +58,7 @@ export const companyNameSelector = (state: RootState) => (
 export const isCompleteSelector = (state: RootState) => {
   const slice = state.RegistrationOptions;
   return slice.isCompanyNameRequiredOnBadges !== null
-    && (!slice.isCompanyNameRequiredOnBadges || slice.companyName)
+    && (!slice.isCompanyNameRequiredOnBadges || Boolean(slice.companyName))
     && slice.isSpecialAccomodationRequired !== null;
 };
 

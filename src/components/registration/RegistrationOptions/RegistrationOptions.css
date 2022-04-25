@@ -9,3 +9,12 @@
   flex-direction: column;
   row-gap: calc(var(--spacing-1) / 2);
 }
+
+.RegistrationOptions-company-name {
+  display: flex;
+  column-gap: calc(var(--spacing-1) / 2);
+}
+
+.RegistrationOptions-company-name input {
+  max-width: fit-content;
+}

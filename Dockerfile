@@ -11,8 +11,9 @@ ENV PATH /mnt/node_modules/.bin:$PATH
 COPY package.json ./
 COPY package-lock.json ./
 
-RUN npm install --silent
-RUN npm install react-scripts@3.4.1 -g --silent
+# with --production devDependencies won't be installed
+RUN npm install --production
+RUN npm install react-scripts -g
 
 # add app
 COPY . ./
