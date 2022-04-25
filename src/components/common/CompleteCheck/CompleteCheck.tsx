@@ -14,7 +14,7 @@ export interface CompleteCheckContainerProps {
 export const CompleteCheckContainer: FC<CompleteCheckContainerProps> = ({ show = true }) => {
   const classes = [
     'CompleteCheck-container',
-    !show && 'CompleteCheck-container--hidden',
+    show ? 'CompleteCheck-container--visible' : 'CompleteCheck-container--hidden',
   ].filter(Boolean).join(' ');
 
   return <div className={classes}>

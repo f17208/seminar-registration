@@ -63,7 +63,7 @@ export const PeopleAttendingForm: FC<PeopleAttendingFormProps> = () => {
                   const isDisabled = i >= peopleDetails.length;
                   const classes = [
                     'text-small',
-                    isDisabled && 'people-row--disabled',
+                    isDisabled ? 'people-row--disabled' : 'people-row--enabled',
                   ].filter(Boolean).join(' ');
 
                   return <tr

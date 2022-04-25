@@ -1,7 +1,8 @@
 import puppeteer from 'puppeteer';
 
-const completeChecksSelector = '.CompleteCheck-icon';
+const completeChecksSelector = '.CompleteCheck-container--visible';
 const disabledStepsSelector = '.Step-container--disabled';
+const optionsSelector = ".PeopleAttending-list tr.people-row--enabled";
 
 describe('App.js', () => {
   let browser;
@@ -22,8 +23,6 @@ describe('App.js', () => {
 
   it('changes the number of attendees', async () => {
     await page.goto(`http://localhost:${process.env.PORT}`);
-
-    const optionsSelector = ".PeopleAttending-list tr";
 
     let options = await page.$$(optionsSelector);
     expect(options.length).toBe(0);
@@ -268,7 +267,6 @@ describe('App.js', () => {
     await submitButton.click();
 
     // after submit, the state is reset so the number of attendees must be zero
-    const optionsSelector = ".PeopleAttending-list tr";
     const options = await page.$$(optionsSelector);
     expect(options.length).toBe(0);
 
