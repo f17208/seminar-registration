@@ -16,8 +16,7 @@ You will also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner.
 
 ### `npm run build`
 
@@ -42,8 +41,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ### `npm lint`
 
 Runs eslint to analyze code style. Use --fix option to fix errors that can be automatically fixed.
-
-### `npm test`
-
-Runs all tests.
 
