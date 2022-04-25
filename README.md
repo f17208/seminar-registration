@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Seminar Registration
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -39,8 +39,11 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### `npm lint`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Runs eslint to analyze code style. Use --fix option to fix errors that can be automatically fixed.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `npm test`
+
+Runs all tests.
+
