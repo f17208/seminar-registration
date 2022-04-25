@@ -24,8 +24,8 @@
     "test": "react-scripts test --watchAll=false",
     "test:watch": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "npx eslint src/**/*.{tsx,ts}",
-    "lint:fix": "npx eslint src/**/*.{tsx,ts} --fix"
+    "lint": "eslint src --ext ts,js,tsx",
+    "lint:fix": "eslint src --ext ts,js,tsx --fix"
   },
   "eslintConfig": {
     "extends": [
