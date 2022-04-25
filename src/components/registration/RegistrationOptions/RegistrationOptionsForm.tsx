@@ -99,11 +99,7 @@ export const RegistrationOptionsForm: FC<RegistrationOptionsFormProps> = () => {
         </div>
       </div>
 
-      {
-        isComplete && (
-          <CompleteCheckContainer />
-        )
-      }
+      <CompleteCheckContainer show={isComplete} />
     </div>
   );
 };

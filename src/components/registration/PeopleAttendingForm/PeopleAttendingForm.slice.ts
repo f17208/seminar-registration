@@ -53,9 +53,6 @@ export const {
 } = peopleAttendingSlice.actions;
 
 // selectors
-export const numberOfPeopleSelector = (state: RootState) => (
-  state.PeopleAttending.peopleDetails.length
-);
 export const peopleDetailsSelector = (state: RootState) => (
   state.PeopleAttending.peopleDetails
 );

@@ -1,11 +1,22 @@
+.CompleteCheck-icon {
+  width: 100px;
+  height: auto;
+}
+
 .CompleteCheck-container {
   padding-top: var(--spacing-3);
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: scaleY(1);
+  transition-duration: 0.3s;
+  transition-property: transform;
+  transition-timing-function: ease-in-out;
+  transform-origin: top;
 }
 
-.CompleteCheck-icon {
-  width: 100px;
-  height: auto;
+.CompleteCheck-container--hidden {
+  transform: scaleY(0);
+  position: absolute;
+  opacity: 0;
 }

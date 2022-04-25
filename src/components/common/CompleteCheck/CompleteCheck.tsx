@@ -7,8 +7,17 @@ export const CompleteCheck: FC = () => {
   return <CheckIcon className="CompleteCheck-icon" />;
 };
 
-export const CompleteCheckContainer: FC = () => {
-  return <div className="CompleteCheck-container">
+export interface CompleteCheckContainerProps {
+  show?: boolean;
+}
+
+export const CompleteCheckContainer: FC<CompleteCheckContainerProps> = ({ show = true }) => {
+  const classes = [
+    'CompleteCheck-container',
+    !show && 'CompleteCheck-container--hidden',
+  ].filter(Boolean).join(' ');
+
+  return <div className={classes}>
     <CompleteCheck />
   </div>;
 };

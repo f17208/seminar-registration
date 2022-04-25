@@ -4,6 +4,7 @@
   height: fit-content;
   padding-bottom: var(--spacing-1);
   max-width: 33%;
+  transition: opacity 0.2s ease-in-out;
 }
 
 @media screen and (max-width: 1225px) {

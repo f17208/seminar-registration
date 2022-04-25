@@ -6,10 +6,26 @@
   display: flex;
   flex-direction: column;
   row-gap: calc(var(--spacing-1) / 2);
+  height: auto;
+  transition: all 0.3s ease-in-out;
 }
 
 .PeopleAttending-list table {
   width: fit-content;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.PeopleAttending-list tr {
+  transform-origin: top;
+  transform: scaleY(1);
+  transition: all 0.3s ease-in-out;
+}
+
+.PeopleAttending-list tr.people-row--disabled {
+  transform: scaleY(0); /* hide the element */
+  position: absolute; /* move away the element and free space in the container */
 }
 
 .PeopleAttending-select {
