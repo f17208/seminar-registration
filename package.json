@@ -21,8 +21,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll=false",
-    "test:watch": "react-scripts test",
+    "test": "react-scripts test --watchAll=false --testPathIgnorePatterns=.*e2e.test.js",
+    "test:e2e": "react-scripts test --watchAll=false e2e.test.js",
     "eject": "react-scripts eject",
     "lint": "eslint src --ext ts,js,tsx"
   },

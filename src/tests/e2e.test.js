@@ -4,21 +4,13 @@ const completeChecksSelector = '.CompleteCheck-container--visible';
 const disabledStepsSelector = '.Step-container--disabled';
 const optionsSelector = ".PeopleAttending-list tr.people-row--enabled";
 
-describe('App.js', () => {
+describe('App.tsx', () => {
   let browser;
   let page;
 
   beforeAll(async () => {
     browser = await puppeteer.launch();
     page = await browser.newPage();
-  });
-
-  it('is served on the right port', async () => {
-    await page.goto(`http://localhost:${process.env.PORT}`);
-    const peopleAttendingLabelId = '#people-attending-label';
-    await page.waitForSelector(peopleAttendingLabelId);
-    const text = await page.$eval(peopleAttendingLabelId, (e) => e.textContent);
-    expect(text).toContain('How many people will be attending?');
   });
 
   it('changes the number of attendees', async () => {
