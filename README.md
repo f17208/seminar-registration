@@ -9,6 +9,8 @@ I recommend running `yarn install` on your local machine before attempting to ex
 
 If you don't want to install `node_modules` on the host machine, I guess you'll have to avoid the `-v $(pwd):/mnt` option (see section 3 of this document).
 
+You can use both Yarn or Npm for installation, execution, testing and running other scripts.
+
 
 ## 1 - Running the project locally
 
